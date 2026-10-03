@@ -19,6 +19,8 @@ const clean = (value: unknown, max = 500) =>
   typeof value === "string" ? value.trim().slice(0, max) || null : null;
 
 export async function POST(request: Request) {
+  if (request.headers.get("dnt") === "1") return new Response(null, { status: 204 });
+
   const fetchSite = request.headers.get("sec-fetch-site");
   if (fetchSite && fetchSite !== "same-origin") {
     return Response.json({ error: "same-origin only" }, { status: 403 });
@@ -36,13 +38,19 @@ export async function POST(request: Request) {
     return Response.json({ error: "invalid json" }, { status: 400 });
   }
 
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return Response.json({ error: "invalid event" }, { status: 400 });
+  }
+
   const eventType = body.eventType;
-  const path = clean(body.path);
+  const path = clean(body.path)?.split("?")[0];
   const sessionId = clean(body.sessionId, 80);
   const visitorId = clean(body.visitorId, 80);
   if (
     (eventType !== "page_view" && eventType !== "click") ||
     !path?.startsWith("/") ||
+    path.startsWith("/dashboard") ||
+    path.startsWith("/api/") ||
     !sessionId ||
     !visitorId
   ) {

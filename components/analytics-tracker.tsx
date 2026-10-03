@@ -33,16 +33,13 @@ function sourceFrom(referrer: string, utmSource: string | null) {
 
 function send(payload: Record<string, unknown>) {
   const body = JSON.stringify(payload);
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon("/api/events", new Blob([body], { type: "application/json" }));
-    return;
-  }
+  if (navigator.sendBeacon?.("/api/events", new Blob([body], { type: "application/json" }))) return;
   void fetch("/api/events", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body,
     keepalive: true,
-  });
+  }).catch(() => { /* Analytics must not interrupt reading. */ });
 }
 
 export function AnalyticsTracker() {
@@ -52,11 +49,17 @@ export function AnalyticsTracker() {
     if (!pathname || pathname.startsWith("/dashboard") || navigator.doNotTrack === "1") return;
 
     const params = new URLSearchParams(window.location.search);
-    const visitorId = idFor(localStorage, VISITOR_KEY);
-    const sessionId = idFor(sessionStorage, SESSION_KEY);
+    let visitorId: string;
+    let sessionId: string;
+    try {
+      visitorId = idFor(localStorage, VISITOR_KEY);
+      sessionId = idFor(sessionStorage, SESSION_KEY);
+    } catch {
+      return; // Storage may be unavailable in privacy-restricted browsers.
+    }
     const referrer = document.referrer.slice(0, 500);
     const base = {
-      path: `${pathname}${window.location.search}`.slice(0, 500),
+      path: pathname.slice(0, 500),
       visitorId,
       sessionId,
       referrer,
@@ -77,7 +80,7 @@ export function AnalyticsTracker() {
         ...base,
         eventType: "click",
         target: anchor.href.slice(0, 500),
-        label: (anchor.textContent ?? "").trim().replace(/\s+/g, " ").slice(0, 160),
+        label: (anchor.dataset.analyticsLabel ?? anchor.textContent ?? "").trim().replace(/\s+/g, " ").slice(0, 160),
       });
     };
 

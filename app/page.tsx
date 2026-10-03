@@ -1,7 +1,7 @@
-import { posts } from "@/lib/posts";
+import { homepagePosts } from "@/lib/posts";
 
 export default function HomePage() {
-  const [lead, ...rest] = posts;
+  const [lead, ...rest] = homepagePosts;
 
   return (
     <>
@@ -19,9 +19,9 @@ export default function HomePage() {
           <span>The lead</span>
           <span>{lead.date} · {lead.readTime}</span>
         </div>
-        <a className="lead-link" href={`/journal/${lead.slug}`}>
+        <a className="lead-link" data-analytics-label={lead.title} href={`/journal/${lead.slug}`}>
           <div>
-            <p className="story-index">01 / 20</p>
+            <p className="story-index">01 / {homepagePosts.length}</p>
             <h2 id="lead-heading">{lead.title}</h2>
           </div>
           <div className="lead-copy">
@@ -39,7 +39,7 @@ export default function HomePage() {
         <div className="story-list">
           {rest.map((post, index) => (
             <article className="story-row" key={post.slug}>
-              <a href={`/journal/${post.slug}`}>
+              <a data-analytics-label={post.title} href={`/journal/${post.slug}`}>
                 <div className="story-number">{String(index + 2).padStart(2, "0")}</div>
                 <div className="story-title-block">
                   <p className="story-kicker">{post.category}</p>
@@ -56,6 +56,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <div className="archive-link page-shell"><a className="text-link" href="/archive">Explore the archive <span aria-hidden="true">↗</span></a></div>
 
       <section className="home-manifesto page-shell">
         <p className="eyebrow">Our filter</p>

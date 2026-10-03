@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     siteName: "maniacal.",
     type: "website",
   },
+  alternates: { types: { "application/rss+xml": "https://maniacal.vc/feed.xml" } },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <div className="footer-meta">
             <span>Independent · San Francisco</span>
+            <a href="/feed.xml">RSS feed</a>
             <span>© 2026 Maniacal</span>
           </div>
         </footer>

@@ -20,9 +20,11 @@ export async function generateMetadata({
     alternates: { canonical: `/journal/${post.slug}` },
     openGraph: {
       type: "article",
+      url: `https://maniacal.vc/journal/${post.slug}`,
       title: post.title,
       description: post.deck,
       publishedTime: post.isoDate,
+      modifiedTime: post.updatedDate ?? post.isoDate,
     },
   };
 }
@@ -60,6 +62,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               ))}
             </section>
           ))}
+
+          {post.correction && <p className="correction-note">{post.correction}</p>}
 
           <section className="article-sources">
             <h2>Sources & further reading</h2>

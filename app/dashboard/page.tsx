@@ -86,36 +86,36 @@ export default async function DashboardPage({
         COUNT(DISTINCT CASE WHEN event_type = 'page_view' THEN visitor_id END) AS visitors,
         COUNT(DISTINCT CASE WHEN event_type = 'page_view' THEN session_id END) AS sessions,
         SUM(CASE WHEN event_type = 'click' THEN 1 ELSE 0 END) AS clicks
-       FROM analytics_events WHERE created_at >= datetime('now', ?)`,
+       FROM analytics_events WHERE datetime(created_at) >= datetime('now', ?)`,
     ).bind(since).first<CountRow>(),
     runtime.DB.prepare(
       `SELECT date(created_at) AS day, COUNT(*) AS views, COUNT(DISTINCT visitor_id) AS visitors
        FROM analytics_events
-       WHERE event_type = 'page_view' AND created_at >= datetime('now', ?)
+       WHERE event_type = 'page_view' AND datetime(created_at) >= datetime('now', ?)
        GROUP BY date(created_at) ORDER BY day ASC`,
     ).bind(since).all<DailyRow>(),
     runtime.DB.prepare(
-      `SELECT path, COUNT(*) AS views, COUNT(DISTINCT visitor_id) AS visitors
+      `SELECT CASE WHEN instr(path, '?') > 0 THEN substr(path, 1, instr(path, '?') - 1) ELSE path END AS path, COUNT(*) AS views, COUNT(DISTINCT visitor_id) AS visitors
        FROM analytics_events
-       WHERE event_type = 'page_view' AND created_at >= datetime('now', ?)
-       GROUP BY path ORDER BY views DESC LIMIT 8`,
+       WHERE event_type = 'page_view' AND datetime(created_at) >= datetime('now', ?)
+       GROUP BY CASE WHEN instr(path, '?') > 0 THEN substr(path, 1, instr(path, '?') - 1) ELSE path END ORDER BY views DESC LIMIT 8`,
     ).bind(since).all<ContentRow>(),
     runtime.DB.prepare(
       `SELECT COALESCE(target, '') AS target, label, COUNT(*) AS clicks
        FROM analytics_events
-       WHERE event_type = 'click' AND created_at >= datetime('now', ?)
+       WHERE event_type = 'click' AND datetime(created_at) >= datetime('now', ?)
        GROUP BY target, label ORDER BY clicks DESC LIMIT 8`,
     ).bind(since).all<ClickRow>(),
     runtime.DB.prepare(
       `SELECT COALESCE(source, 'Direct') AS source, COUNT(*) AS visits
        FROM analytics_events
-       WHERE event_type = 'page_view' AND created_at >= datetime('now', ?)
+       WHERE event_type = 'page_view' AND datetime(created_at) >= datetime('now', ?)
        GROUP BY source ORDER BY visits DESC LIMIT 6`,
     ).bind(since).all<SourceRow>(),
     runtime.DB.prepare(
       `SELECT COALESCE(device, 'Unknown') AS device, COUNT(*) AS visits
        FROM analytics_events
-       WHERE event_type = 'page_view' AND created_at >= datetime('now', ?)
+       WHERE event_type = 'page_view' AND datetime(created_at) >= datetime('now', ?)
        GROUP BY device ORDER BY visits DESC`,
     ).bind(since).all<DeviceRow>(),
   ]);
@@ -186,7 +186,7 @@ export default async function DashboardPage({
 
       <div className="dashboard-split compact-panels">
         <section className="dashboard-panel">
-          <div className="panel-heading"><h2>Traffic sources</h2><span>Visits</span></div>
+          <div className="panel-heading"><h2>Page-view sources</h2><span>Page views</span></div>
           <div className="data-list">
             {sources.results.length ? sources.results.map((row) => (
               <div className="data-row simple" key={row.source}><strong>{row.source}</strong><strong>{number.format(row.visits)}</strong></div>
@@ -194,7 +194,7 @@ export default async function DashboardPage({
           </div>
         </section>
         <section className="dashboard-panel">
-          <div className="panel-heading"><h2>Devices</h2><span>Visits</span></div>
+          <div className="panel-heading"><h2>Devices</h2><span>Page views</span></div>
           <div className="data-list">
             {devices.results.length ? devices.results.map((row) => (
               <div className="data-row simple" key={row.device}><strong>{row.device}</strong><strong>{number.format(row.visits)}</strong></div>
@@ -204,7 +204,7 @@ export default async function DashboardPage({
       </div>
 
       <p className="dashboard-note">
-        Counts exclude the dashboard, honor Do Not Track, and use anonymous first-party visitor and session IDs. No advertising cookies or IP addresses are stored.
+        Counts exclude the dashboard and honor Do Not Track. Visitors are browser identifiers; sessions are browser-tab sessions. Sources count page views, including internal navigation. Clicks / view is a ratio and may exceed 100%. Publisher visits and automated activity may be included. Dates use UTC. No advertising cookies or IP addresses are stored.
       </p>
     </section>
   );

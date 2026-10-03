@@ -15,13 +15,15 @@ export type Post = {
   category: string;
   date: string;
   isoDate: string;
+  updatedDate?: string;
+  correction?: string;
   readTime: string;
   thesis: string;
   sections: ArticleSection[];
   sources: ArticleSource[];
 };
 
-export const posts: Post[] = [
+const articles: Post[] = [
   {
     slug: "elevenlabs-voice-becomes-interface",
     title: "ElevenLabs is turning voice into infrastructure",
@@ -64,6 +66,8 @@ export const posts: Post[] = [
   },
   {
     slug: "openai-scale-governance-gap",
+    updatedDate: "2026-10-03",
+    correction: "Updated October 3, 2026: added the March financing close and clarified that the FTC investigation is separate from the training pause.",
     title: "OpenAI’s scale is now its central product problem",
     deck:
       "The largest financing in private technology history buys enormous capability. It also makes reliability, governance, and institutional trust inseparable from the product.",
@@ -77,8 +81,8 @@ export const posts: Post[] = [
       {
         heading: "The capitalization of a platform",
         paragraphs: [
-          "In February, OpenAI raised $110 billion at a reported $730 billion pre-money valuation, with Amazon, SoftBank, and Nvidia among the investors. Financing at that scale is an industrial decision. It secures compute, distribution, and strategic alignment while raising the performance bar from ‘best model’ to ‘durable global platform.’",
-          "That platform now touches writing, software, education, search, customer service, and increasingly autonomous work. Each new surface creates revenue, but it also creates another failure mode. The company’s security pause after agents probed government websites, followed by regulatory scrutiny around consumer harms, shows the tension clearly: capability can expand faster than operating discipline.",
+          "OpenAI announced $110 billion in new investment in February at a $730 billion pre-money valuation. In March, it closed the round with $122 billion in committed capital at an $852 billion post-money valuation, anchored by Amazon, Nvidia, and SoftBank. Financing at that scale is an industrial decision. It secures compute, distribution, and strategic alignment while raising the performance bar from ‘best model’ to ‘durable global platform.’",
+          "That platform now touches writing, software, education, search, customer service, and increasingly autonomous work. Each new surface creates revenue, but it also creates another failure mode. AP reported that OpenAI paused training after disclosures of unexpected agent activity on government websites. Separately, the FTC confirmed an industry-wide investigation into potential consumer harms. These events make the operating question concrete: how should a company constrain systems whose capabilities are still changing?",
         ],
       },
       {
@@ -97,7 +101,8 @@ export const posts: Post[] = [
       },
     ],
     sources: [
-      { label: "AP — OpenAI’s $110B financing", url: "https://apnews.com/article/a0a915c32b85337d799fe2f9525a932a" },
+      { label: "OpenAI — February financing announcement", url: "https://openai.com/index/scaling-ai-for-everyone/" },
+      { label: "OpenAI — March financing close", url: "https://openai.com/index/accelerating-the-next-phase-ai/" },
       { label: "AP — security pause after agent activity", url: "https://apnews.com/article/2f8a2b9024d4f06793bcca12f8089d20" },
       { label: "AP — FTC investigation", url: "https://apnews.com/article/89ac416717adbfb1d72f2d85e6ce83d1" },
     ],
@@ -797,6 +802,17 @@ export const posts: Post[] = [
     ],
   },
 ];
+
+// Keep the full collection: homepage limits must never delete published URLs.
+export const posts: Post[] = [...articles]
+  .sort((a, b) => b.isoDate.localeCompare(a.isoDate))
+  .map((post) => {
+    const words = [post.title, post.deck, post.thesis, ...post.sections.flatMap((section) => [section.heading, ...section.paragraphs])].join(" ").split(/\s+/).length;
+    return { ...post, readTime: `${Math.max(1, Math.ceil(words / 200))} min` };
+  });
+
+export const HOME_POST_LIMIT = 20;
+export const homepagePosts = posts.slice(0, HOME_POST_LIMIT);
 
 export function getPost(slug: string) {
   return posts.find((post) => post.slug === slug);
