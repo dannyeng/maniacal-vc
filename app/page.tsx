@@ -9,8 +9,8 @@ export default function HomePage() {
         <p className="eyebrow">Independent journal · San Francisco</p>
         <h1>Technology, AI,<br />and People.</h1>
         <p className="hero-deck">
-          Clear-eyed essays on the companies, capital, and ideas shaping artificial
-          intelligence—and what their momentum actually means.
+          Thoughts on the companies, capital, and ideas shaping our future—and what their
+          momentum actually means.
         </p>
       </section>
 
