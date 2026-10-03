@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       <section className="home-hero page-shell">
         <p className="eyebrow">Independent journal · San Francisco</p>
-        <h1>Technology, AI,<br />and People.</h1>
+        <h1>Technology, intelligence,<br />&amp; people.</h1>
         <p className="hero-deck">
           Thoughts on the companies, capital, and ideas shaping our future—and what their
           momentum actually means.
