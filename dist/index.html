@@ -3,83 +3,109 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#dfff35">
-  <meta name="description" content="MANIACAL is an independent journal about software, systems, AI, and the strange machinery shaping modern life.">
-  <meta property="og:title" content="MANIACAL — Technology is getting stranger. Good.">
-  <meta property="og:description" content="Notes on software, systems, AI, and the strange machinery shaping modern life.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="MANIACAL is an independent journal of notes and essays on technology, artificial intelligence, and modern life.">
+  <meta property="og:title" content="MANIACAL — Notes on technology and AI">
+  <meta property="og:description" content="Considered writing about technology, artificial intelligence, and what comes next.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://maniacal.vc">
   <link rel="canonical" href="https://maniacal.vc">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
-  <title>MANIACAL — An independent technology journal</title>
+  <title>MANIACAL — Notes on technology and AI</title>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="topbar"><span class="signal">Transmission active</span><span>Independent technology journal · Est. 2026</span></div>
   <header class="site-header">
-    <nav class="nav" id="site-nav" aria-label="Primary">
-      <a href="#latest">Latest</a><a href="#ideas">Ideas</a><a href="#about">About</a>
+    <a class="logo" href="/" aria-label="Maniacal home">maniacal.</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#journal">Journal</a>
+      <a href="#about">About</a>
+      <a href="#letters">Letters</a>
     </nav>
-    <a class="logo" href="/" aria-label="Maniacal home">MANIACAL<span class="logo-dot">.</span></a>
-    <div class="utility"><span class="issue-label">Issue 001</span><a href="#newsletter">Subscribe</a></div>
-    <button class="menu-button" aria-expanded="false" aria-controls="site-nav">Menu +</button>
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="hero-copy">
-        <div>
-          <p class="eyebrow"><span>New signal</span> Culture / Code / Capital</p>
-          <h1>Technology is getting stranger. Good.</h1>
-        </div>
-        <div class="hero-bottom">
-          <div class="hero-index">Vol. 01<br>Oct. 2026</div>
-          <p class="hero-deck">Clear-eyed essays about ambitious software, intelligent machines, internet culture, and the people building what comes next.</p>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="cross"></div><div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div><div class="core"></div>
-        <div class="art-caption"><span>Object 001</span><span>Unstable orbit</span></div>
-      </div>
+    <section class="intro wrap">
+      <p class="label">Independent journal · San Francisco</p>
+      <h1>Notes on technology, AI, and whatever comes after.</h1>
+      <p class="intro-copy">Considered essays on the products, people, and ideas shaping modern life. Written when there is something worth saying.</p>
     </section>
 
-    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Software</span><b>✳</b><span>Systems</span><b>✳</b><span>Artificial intelligence</span><b>✳</b><span>Internet culture</span><b>✳</b><span>Venture</span><b>✳</b><span>Software</span><b>✳</b><span>Systems</span><b>✳</b><span>Artificial intelligence</span><b>✳</b><span>Internet culture</span><b>✳</b><span>Venture</span><b>✳</b></div></div>
-
-    <section class="section" id="latest">
-      <div class="section-head"><h2>The lead</h2><span class="count">01 / 05</span></div>
-      <article class="feature">
-        <div class="feature-visual" aria-hidden="true"><div class="stack-card a">YOU</div><div class="stack-card b">AI</div><div class="stack-card c">?</div></div>
-        <div class="feature-copy">
-          <div><p class="meta">Interface · 8 min read</p><h3>The last interface is no interface at all</h3><p>We spent fifty years teaching humans to speak computer. Now the bargain is reversing—and every product surface is up for renegotiation.</p></div>
-          <a class="read-link" href="/articles/the-last-interface.html">Read the story</a>
+    <section class="lead wrap" aria-labelledby="lead-title">
+      <div class="lead-meta">
+        <p class="label">The lead</p>
+        <p>October 3, 2026<br>AI &amp; Interfaces · 8 min</p>
+      </div>
+      <article class="lead-story">
+        <h2 id="lead-title"><a href="/articles/the-last-interface.html">The last interface is no interface at all</a></h2>
+        <div class="lead-summary">
+          <p>We spent fifty years teaching humans to speak computer. Now the bargain is reversing—and every product surface is up for renegotiation.</p>
+          <a class="text-link" href="/articles/the-last-interface.html">Read essay <span aria-hidden="true">↗</span></a>
         </div>
       </article>
     </section>
 
-    <section class="section" id="ideas">
-      <div class="section-head"><h2>Recent signals</h2><span class="count">04 transmissions</span></div>
-      <div class="filter-row" role="group" aria-label="Filter articles">
-        <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="ai">AI</button><button class="filter" data-filter="systems">Systems</button><button class="filter" data-filter="culture">Culture</button>
+    <section class="journal wrap" id="journal" aria-labelledby="journal-title">
+      <div class="section-heading">
+        <h2 id="journal-title">The journal</h2>
+        <p>Essays, observations, and useful disagreements.</p>
       </div>
-      <div class="stories">
-        <article class="story" data-category="ai"><div class="story-num"><span>02 / AI</span><span class="story-mark" style="--accent:#dfff35">∞</span></div><h3>Agents need taste, not more tools</h3><p>Capability is abundant. Judgment is the new scarce resource—and the hardest one to benchmark.</p><a href="/articles/agents-need-taste.html">Enter essay →</a></article>
-        <article class="story" data-category="systems"><div class="story-num"><span>03 / Systems</span><span class="story-mark" style="--accent:#ff6b4a">↯</span></div><h3>Small software is a big idea</h3><p>The next important app may be a sharp, strange instrument made for twelve thousand people.</p><a href="/articles/small-software.html">Enter essay →</a></article>
-        <article class="story" data-category="culture"><div class="story-num"><span>04 / Culture</span><span class="story-mark" style="--accent:#5b75ff;color:white">◎</span></div><h3>The internet after the feed</h3><p>What happens when discovery stops being a slot machine and becomes a conversation?</p><a href="/articles/internet-after-feed.html">Enter essay →</a></article>
+      <div class="story-list">
+        <article class="story-row">
+          <div class="story-meta"><span>01</span><span>Artificial intelligence</span></div>
+          <div class="story-copy">
+            <h3><a href="/articles/agents-need-taste.html">Agents need taste, not more tools</a></h3>
+            <p>Capability is abundant. Judgment is the new scarce resource—and the hardest one to benchmark.</p>
+          </div>
+          <div class="story-date"><span>Oct. 03, 2026</span><span>6 min</span></div>
+        </article>
+        <article class="story-row">
+          <div class="story-meta"><span>02</span><span>Software</span></div>
+          <div class="story-copy">
+            <h3><a href="/articles/small-software.html">Small software is a big idea</a></h3>
+            <p>The next important app may be a sharp, strange instrument made for twelve thousand people.</p>
+          </div>
+          <div class="story-date"><span>Oct. 03, 2026</span><span>5 min</span></div>
+        </article>
+        <article class="story-row">
+          <div class="story-meta"><span>03</span><span>Internet culture</span></div>
+          <div class="story-copy">
+            <h3><a href="/articles/internet-after-feed.html">The internet after the feed</a></h3>
+            <p>What happens when discovery stops being a slot machine and becomes a conversation?</p>
+          </div>
+          <div class="story-date"><span>Oct. 03, 2026</span><span>5 min</span></div>
+        </article>
       </div>
     </section>
 
-    <section class="section manifesto" id="about">
-      <div><p class="eyebrow">A small declaration</p><h2>Obsessive about the <em>interesting</em> parts.</h2></div>
-      <div class="manifesto-copy"><p>MANIACAL is an independent journal for people who would rather inspect the machinery than applaud the demo. We write about technology as a human project: full of ambition, accidents, incentives, and very weird edge cases.</p><p>No trend reports. No content sludge. Just durable ideas, specific observations, and the occasional beautiful provocation.</p><ol class="principles"><li><span>01</span>Curiosity over consensus</li><li><span>02</span>Specificity over spectacle</li><li><span>03</span>People over platforms</li></ol></div>
+    <section class="about wrap" id="about">
+      <p class="label">About Maniacal</p>
+      <p class="about-statement">A small publication for clear thinking about fast-moving technology. We are interested in what a product reveals about its makers, what a model changes about its users, and which supposedly inevitable futures are worth questioning.</p>
     </section>
 
-    <section class="section newsletter" id="newsletter">
-      <div class="newsletter-inner"><p class="eyebrow">Occasional transmission</p><h2>Stay slightly ahead.</h2><p>New essays, strange links, and ideas worth carrying around. Delivered when there is something worth saying.</p><form class="signup" id="signup-form"><label class="skip" for="email">Email address</label><input id="email" type="email" placeholder="you@somewhere.com" autocomplete="email" required><button type="submit">Join the signal</button></form><p class="form-note" id="form-note" aria-live="polite">No spam. No growth hacks. Easy exit.</p></div>
+    <section class="letters wrap" id="letters">
+      <div>
+        <p class="label">Occasional letters</p>
+        <h2>New writing, quietly delivered.</h2>
+      </div>
+      <div>
+        <p>A short note whenever we publish something worth your attention.</p>
+        <form class="signup" id="signup-form">
+          <label class="skip" for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="form-note" id="form-note" aria-live="polite">No cadence. No noise. Unsubscribe anytime.</p>
+      </div>
     </section>
   </main>
 
-  <footer><div class="footer-logo">MANIACAL.</div><div class="footer-links"><a href="#latest">Latest</a><a href="#about">About</a><a href="mailto:hello@maniacal.vc">Contact</a></div><div class="footer-note">Built with unreasonable attention<br>© 2026 Maniacal</div></footer>
+  <footer class="site-footer wrap">
+    <a class="footer-logo" href="/">maniacal.</a>
+    <p>Independent notes on technology and AI.</p>
+    <p>© 2026</p>
+  </footer>
   <script src="/script.js"></script>
 </body>
 </html>
