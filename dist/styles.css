@@ -205,3 +205,79 @@ footer { padding: 2rem 3vw; display: grid; grid-template-columns: 1fr auto 1fr; 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
+
+/* Quiet luxury edition: restrained product clarity meets fashion editorial. */
+:root {
+  --ink: #080808;
+  --paper: #ffffff;
+  --acid: #f1f1ee;
+  --coral: #111111;
+  --blue: #e9edf1;
+  --muted: #747474;
+  --line: #d8d8d8;
+}
+
+body { background: #fff; }
+body::before { opacity: .015; }
+.topbar { min-height: 32px; padding-block: .45rem; background: #fff; color: #111; border-bottom: 1px solid var(--line); font-weight: 500; }
+.signal::before { width: 6px; height: 6px; background: #111; box-shadow: none; }
+.site-header { min-height: 82px; border-bottom-color: var(--line); }
+.logo { font-weight: 750; letter-spacing: -.055em; }
+.logo-dot { color: inherit; }
+.nav, .utility { font-weight: 500; letter-spacing: .1em; }
+.issue-label { border-color: var(--line); }
+.hero { min-height: 78vh; border-bottom-color: var(--line); }
+.hero-copy { padding-top: clamp(4.8rem,9vw,9rem); }
+.eyebrow { font-weight: 500; letter-spacing: .16em; }
+.eyebrow span { background: #111; color: #fff; border-color: #111; }
+h1 { max-width: 980px; font-weight: 680; font-size: clamp(3.7rem,8.9vw,9rem); line-height: .86; letter-spacing: -.075em; }
+.hero-deck { max-width: 620px; font-size: clamp(1.12rem,1.8vw,1.55rem); line-height: 1.35; }
+.hero-art { border-left-color: var(--line); background: radial-gradient(circle at 50% 40%,#fff 0 16%,#eceef0 16.2% 30%,#d8dce0 30.2% 49%,#f8f8f7 49.2%); }
+.orbit { border-color: rgba(0,0,0,.3); }
+.core { background: #111; border: 0; box-shadow: 18px 18px 0 rgba(255,255,255,.85); }
+.cross { opacity: .12; }
+.ticker { padding-block: .85rem; background: #fff; border-bottom-color: var(--line); color: #777; font-weight: 500; }
+.ticker b { color: #111; }
+.section { padding-block: clamp(5rem,8vw,9rem); border-bottom-color: var(--line); }
+.section-head h2 { font-weight: 650; }
+.feature { border-color: var(--line); background: #fff; }
+.feature-visual { background: #f4f4f2; border-right-color: var(--line); }
+.stack-card { border-color: #bbb; background: #fff !important; color: #111 !important; box-shadow: 8px 8px 24px rgba(0,0,0,.09); font-weight: 600; }
+.stack-card.a { left: 12%; top: 14%; }
+.stack-card.b { right: 9%; top: 24%; }
+.feature h3 { font-weight: 640; }
+.read-link::after { border-color: #aaa; }
+.read-link:hover::after { background: #111; color: #fff; }
+.filter { border-color: #c8c8c8; font-weight: 500; }
+.filter.active, .filter:hover { background: #111; }
+.stories { border-color: var(--line); }
+.story { min-height: 430px; border-color: var(--line); background: #fff; }
+.story:hover { background: #f7f7f5; transform: none; }
+.story-mark { width: 46px; height: 46px; border-color: #bbb; background: #fff !important; color: #111 !important; font-weight: 500; transform: none; }
+.story h3 { font-weight: 620; }
+.manifesto { background: #f5f5f3; color: #111; }
+.manifesto h2 { font-weight: 640; }
+.manifesto h2 em, .principles span { color: #111; }
+.principles, .principles li { border-color: #c9c9c5; }
+.newsletter { background: #111; color: #fff; }
+.newsletter .eyebrow { color: #aaa; }
+.newsletter .eyebrow span { background: #fff; color: #111; }
+.signup { border-color: #fff; }
+.signup input { color: #fff; }
+.signup input::placeholder { color: #9a9a9a; }
+.signup button { background: #fff; color: #111; }
+footer { background: #fff; color: #111; border-top: 1px solid var(--line); }
+.footer-note { color: #777; }
+.article-hero { border-bottom-color: var(--line); }
+.article-kicker { color: #777; }
+.article-title { font-weight: 650; }
+.article-art { background: radial-gradient(circle,#fff 0 18%,#eceef0 18.2% 36%,#d8dce0 36.2% 55%,#f8f8f7 55.2%) !important; border-bottom-color: var(--line); }
+.article-art-glyph { background: #fff !important; color: #111 !important; border: 1px solid #aaa; box-shadow: 26px 26px 50px rgba(0,0,0,.12); font-weight: 500; }
+.article-body h2, .pullquote { font-weight: 620; }
+.article-body > p:first-child::first-letter { color: #111; }
+.side-note { background: #f3f3f0; border-color: #bbb; }
+
+@media (max-width: 900px) {
+  .nav { background: #fff; border-bottom-color: var(--line); }
+  .hero-art, .feature-visual { border-color: var(--line); }
+}
