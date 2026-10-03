@@ -2,6 +2,7 @@ import { homepagePosts } from "@/lib/posts";
 
 export default function HomePage() {
   const [lead, ...rest] = homepagePosts;
+  const latest = homepagePosts.slice(0, 5);
 
   return (
     <>
@@ -12,6 +13,31 @@ export default function HomePage() {
           Thoughts on the companies, capital, and ideas shaping our future—and what their
           momentum actually means.
         </p>
+      </section>
+
+      <section className="latest-briefing page-shell" aria-labelledby="latest-heading">
+        <div className="latest-intro">
+          <p className="eyebrow">Briefing</p>
+          <h2 id="latest-heading">Today&rsquo;s latest</h2>
+        </div>
+        <ol className="latest-list">
+          {latest.map((post, index) => (
+            <li key={post.slug}>
+              <a data-analytics-label={`Today's latest: ${post.title}`} href={`/journal/${post.slug}`}>
+                <span className="latest-number">{String(index + 1).padStart(2, "0")}</span>
+                <span className="latest-meta">
+                  <span>{post.category}</span>
+                  <time dateTime={post.isoDate}>{post.date}</time>
+                </span>
+                <span className="latest-line">
+                  <strong>{post.title}</strong>
+                  <span> — {post.deck}</span>
+                </span>
+                <span className="latest-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="lead-story page-shell" aria-labelledby="lead-heading">
