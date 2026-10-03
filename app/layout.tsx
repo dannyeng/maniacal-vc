@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://maniacal.vc"),
   title: {
-    default: "maniacal. — Technology, without the theater",
+    default: "maniacal. — Thoughts in service of human progress",
     template: "%s — maniacal.",
   },
   description:
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <a className="wordmark wordmark-small" href="/">
               maniacal.
             </a>
-            <p>Technology, without the theater.</p>
+            <p>Thoughts in service of human progress.</p>
           </div>
           <div className="footer-meta">
             <span>Independent · San Francisco</span>
