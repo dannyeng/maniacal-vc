@@ -34,7 +34,7 @@ export default function HomePage() {
       <section className="journal page-shell" id="journal" aria-labelledby="journal-heading">
         <div className="section-intro">
           <p className="eyebrow">The journal</p>
-          <h2 id="journal-heading">Twenty companies<br />worth understanding.</h2>
+          <h2 id="journal-heading">Companies<br />worth understanding.</h2>
         </div>
         <div className="story-list">
           {rest.map((post, index) => (
