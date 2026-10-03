@@ -30,7 +30,7 @@ export const posts: Post[] = [
     category: "AI & Interfaces",
     date: "October 3, 2026",
     isoDate: "2026-10-03",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Voice AI is moving from impressive demo to operating layer, and ElevenLabs is being valued as if it can own that transition.",
     sections: [
@@ -70,7 +70,7 @@ export const posts: Post[] = [
     category: "AI & Institutions",
     date: "October 2, 2026",
     isoDate: "2026-10-02",
-    readTime: "8 min",
+    readTime: "4 min",
     thesis:
       "OpenAI no longer has a clean boundary between model company, consumer platform, cloud buyer, and critical infrastructure provider.",
     sections: [
@@ -110,7 +110,7 @@ export const posts: Post[] = [
     category: "Defense & Industry",
     date: "October 1, 2026",
     isoDate: "2026-10-01",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Anduril is trying to make defense production behave less like bespoke procurement and more like a software-enabled industrial platform.",
     sections: [
@@ -150,7 +150,7 @@ export const posts: Post[] = [
     category: "Science & AI",
     date: "September 30, 2026",
     isoDate: "2026-09-30",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "The next proof point for AI-designed medicine is not a model benchmark; it is a repeatable path from target to candidate to patient.",
     sections: [
@@ -189,7 +189,7 @@ export const posts: Post[] = [
     category: "Robotics",
     date: "September 29, 2026",
     isoDate: "2026-09-29",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Skild’s value depends on whether one learned system can transfer across bodies, tasks, and environments better than specialized robotics stacks.",
     sections: [
@@ -229,7 +229,7 @@ export const posts: Post[] = [
     category: "AI & Europe",
     date: "September 28, 2026",
     isoDate: "2026-09-28",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Mistral’s best opening may be serving institutions that want frontier capability without surrendering operational control to an American platform.",
     sections: [
@@ -267,7 +267,7 @@ export const posts: Post[] = [
     category: "AI & Markets",
     date: "September 25, 2026",
     isoDate: "2026-09-25",
-    readTime: "8 min",
+    readTime: "4 min",
     thesis:
       "Anthropic’s valuation rests on converting research leadership and Claude adoption into a dependable enterprise and developer platform.",
     sections: [
@@ -305,7 +305,7 @@ export const posts: Post[] = [
     category: "Defense & Europe",
     date: "September 23, 2026",
     isoDate: "2026-09-23",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Helsing’s opportunity comes from joining AI software, autonomous systems, and European industrial policy at exactly the moment defense procurement is being reconsidered.",
     sections: [
@@ -343,7 +343,7 @@ export const posts: Post[] = [
     category: "Mobility",
     date: "September 21, 2026",
     isoDate: "2026-09-21",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Autonomous driving is shifting from a contest of demos to a test of fleet operations, geographic expansion, and public trust.",
     sections: [
@@ -382,7 +382,7 @@ export const posts: Post[] = [
     category: "Software & Agents",
     date: "September 18, 2026",
     isoDate: "2026-09-18",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Agentic coding is valuable not only because it makes programmers faster, but because it changes who can turn an idea into working software.",
     sections: [
@@ -420,7 +420,7 @@ export const posts: Post[] = [
     category: "Data & Enterprise",
     date: "September 16, 2026",
     isoDate: "2026-09-16",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Enterprises will adopt AI where their governed data already lives, giving data platforms a privileged position in the stack.",
     sections: [
@@ -458,7 +458,7 @@ export const posts: Post[] = [
     category: "Vertical AI",
     date: "September 14, 2026",
     isoDate: "2026-09-14",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "The legal market rewards systems that combine model capability with permissions, precedent, review, and institutional context.",
     sections: [
@@ -497,7 +497,7 @@ export const posts: Post[] = [
     category: "AI & Work",
     date: "September 12, 2026",
     isoDate: "2026-09-12",
-    readTime: "6 min",
+    readTime: "4 min",
     thesis:
       "Synthetic video becomes strategically important when it is generated, localized, and personalized as part of a workflow rather than produced as a static asset.",
     sections: [
@@ -535,7 +535,7 @@ export const posts: Post[] = [
     category: "Generative Media",
     date: "September 10, 2026",
     isoDate: "2026-09-10",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Video generation may be the commercial entry point for models whose deeper value lies in predicting how the visual world changes over time.",
     sections: [
@@ -573,7 +573,7 @@ export const posts: Post[] = [
     category: "Chips & Compute",
     date: "September 8, 2026",
     isoDate: "2026-09-08",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "As AI usage shifts toward persistent agents and real-time interfaces, predictable low-latency inference becomes a strategic resource.",
     sections: [
@@ -612,7 +612,7 @@ export const posts: Post[] = [
     category: "Robotics",
     date: "September 5, 2026",
     isoDate: "2026-09-05",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Humanoid robotics becomes a business when capable machines can be produced, maintained, and improved at repeatable cost.",
     sections: [
@@ -650,7 +650,7 @@ export const posts: Post[] = [
     category: "AI & Platforms",
     date: "September 2, 2026",
     isoDate: "2026-09-02",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "xAI’s advantage is the tight coupling of infrastructure and distribution; its risk is that the same coupling concentrates technical, financial, and governance exposure.",
     sections: [
@@ -688,7 +688,7 @@ export const posts: Post[] = [
     category: "Software & Agents",
     date: "August 30, 2026",
     isoDate: "2026-08-30",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Coding tools are evolving from autocomplete toward delegated work, shifting value to context, orchestration, and trust in proposed changes.",
     sections: [
@@ -727,7 +727,7 @@ export const posts: Post[] = [
     category: "Chips & Compute",
     date: "August 27, 2026",
     isoDate: "2026-08-27",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "Cerebras can matter without replacing GPUs if its architecture wins distinct workloads on speed, simplicity, or total cost.",
     sections: [
@@ -766,7 +766,7 @@ export const posts: Post[] = [
     category: "Developer Tools",
     date: "August 24, 2026",
     isoDate: "2026-08-24",
-    readTime: "7 min",
+    readTime: "4 min",
     thesis:
       "As agents move into production, the durable category may be the engineering discipline that makes probabilistic systems observable and controllable.",
     sections: [

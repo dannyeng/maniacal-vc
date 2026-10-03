@@ -12,10 +12,10 @@ export default function LettersPage() {
       <h1>Send the thing<br />we should be reading.</h1>
       <p>
         A company with unusual momentum. A founder interview that changed your mind. A technical
-        paper hiding in plain sight. We read thoughtful notes.
+        paper hiding in plain sight. A short editorial letter is coming soon.
       </p>
-      <a className="text-link" href="mailto:letters@maniacal.vc">
-        letters@maniacal.vc <span aria-hidden="true">↗</span>
+      <a className="text-link" href="/#journal">
+        Read the journal <span aria-hidden="true">↗</span>
       </a>
     </section>
   );
