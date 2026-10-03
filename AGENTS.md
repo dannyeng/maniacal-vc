@@ -6,7 +6,7 @@ Preserve the minimalist design and a tasteful, human voice. Every article needs 
 
 Before changing the site, review production, the source, `docs/editorial-calendar.md`, the owner-only analytics dashboard or its live D1 data, and the linked daily automation. Treat launch-day and publisher activity cautiously; anonymous browser IDs are not verified people. Do not expose private dashboard data publicly.
 
-The existing linked Daily Maniacal edition owns scheduled news publishing. Do not create a second overlapping task or rerun it merely to test. Bounded specialist delegation is authorized, with final editorial and production accountability remaining with the lead agent.
+The existing linked Daily Maniacal edition owns scheduled news publishing. The existing Daily Maniacal executive report owns the evening management recap; publishing runs send concise meaningful release or failure notices. Do not create a second overlapping task or rerun it merely to test. Bounded specialist delegation is authorized, with final editorial and production accountability remaining with the lead agent.
 
 Use the Sites skill and preserve `.openai/hosting.json`, D1 binding, custom domains, and public access policy. Keep all published posts in `lib/posts.ts`; homepagePosts selects the newest twenty, while `/archive` and `/feed.xml` use the complete collection. Preserve article URLs. Reading times are computed, not manually inflated.
 
