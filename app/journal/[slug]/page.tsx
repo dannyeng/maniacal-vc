@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPost, posts } from "@/lib/posts";
 
@@ -83,10 +82,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       <nav className="next-story" aria-label="Continue reading">
         <span className="eyebrow">Next in the journal</span>
-        <Link href={`/journal/${next.slug}`}>
+        <a href={`/journal/${next.slug}`}>
           <span>{next.title}</span>
           <span aria-hidden="true">↗</span>
-        </Link>
+        </a>
       </nav>
     </article>
   );

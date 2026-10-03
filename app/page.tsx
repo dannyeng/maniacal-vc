@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { posts } from "@/lib/posts";
 
 export default function HomePage() {
@@ -20,7 +19,7 @@ export default function HomePage() {
           <span>The lead</span>
           <span>{lead.date} · {lead.readTime}</span>
         </div>
-        <Link className="lead-link" href={`/journal/${lead.slug}`}>
+        <a className="lead-link" href={`/journal/${lead.slug}`}>
           <div>
             <p className="story-index">01 / 20</p>
             <h2 id="lead-heading">{lead.title}</h2>
@@ -29,7 +28,7 @@ export default function HomePage() {
             <p>{lead.deck}</p>
             <span className="read-link">Read the analysis <span aria-hidden="true">↗</span></span>
           </div>
-        </Link>
+        </a>
       </section>
 
       <section className="journal page-shell" id="journal" aria-labelledby="journal-heading">
@@ -40,7 +39,7 @@ export default function HomePage() {
         <div className="story-list">
           {rest.map((post, index) => (
             <article className="story-row" key={post.slug}>
-              <Link href={`/journal/${post.slug}`}>
+              <a href={`/journal/${post.slug}`}>
                 <div className="story-number">{String(index + 2).padStart(2, "0")}</div>
                 <div className="story-title-block">
                   <p className="story-kicker">{post.category}</p>
@@ -52,7 +51,7 @@ export default function HomePage() {
                   <span>{post.readTime}</span>
                 </div>
                 <span className="story-arrow" aria-hidden="true">↗</span>
-              </Link>
+              </a>
             </article>
           ))}
         </div>

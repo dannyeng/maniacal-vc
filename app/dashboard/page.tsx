@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { env } from "cloudflare:workers";
 import { chatGPTSignOutPath, requireChatGPTUser } from "@/app/chatgpt-auth";
 import { posts } from "@/lib/posts";
@@ -140,9 +139,9 @@ export default async function DashboardPage({
 
       <nav className="range-switcher" aria-label="Date range">
         {[7, 30, 90].map((days) => (
-          <Link key={days} href={`/dashboard?range=${days}`} className={range === days ? "active" : ""}>
+          <a key={days} href={`/dashboard?range=${days}`} className={range === days ? "active" : ""}>
             {days} days
-          </Link>
+          </a>
         ))}
       </nav>
 

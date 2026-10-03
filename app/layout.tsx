@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { AnalyticsTracker } from "@/components/analytics-tracker";
 import "./globals.css";
 
@@ -28,21 +27,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <AnalyticsTracker />
         <header className="site-header">
-          <Link className="wordmark" href="/" aria-label="maniacal home">
+          <a className="wordmark" href="/" aria-label="maniacal home">
             maniacal.
-          </Link>
+          </a>
           <nav className="site-nav" aria-label="Primary navigation">
-            <Link href="/#journal">Journal</Link>
-            <Link href="/about">About</Link>
-            <Link href="/letters">Letters</Link>
+            <a href="/#journal">Journal</a>
+            <a href="/about">About</a>
+            <a href="/letters">Letters</a>
           </nav>
         </header>
         <main>{children}</main>
         <footer className="site-footer">
           <div>
-            <Link className="wordmark wordmark-small" href="/">
+            <a className="wordmark wordmark-small" href="/">
               maniacal.
-            </Link>
+            </a>
             <p>Technology, without the theater.</p>
           </div>
           <div className="footer-meta">
